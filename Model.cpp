@@ -74,7 +74,12 @@ void Model::checkWin() {
     }
 
     // 没有找到胜者
-    winner = 0;
+    if (isFull()) {
+        winner = 3; // 3 代表平局
+    }
+    else {
+        winner = 0; // 游戏继续
+    }
 }
 
 // 检查棋盘是否已满（没有空格）
